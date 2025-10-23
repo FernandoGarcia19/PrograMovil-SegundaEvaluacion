@@ -1,4 +1,4 @@
-package com.calyrsoft.ucbp1.features.dollar.data.database.dao
+package com.calyrsoft.ucbp1.features.dollar.data.database
 
 import androidx.room.Dao
 import androidx.room.Insert
@@ -11,14 +11,11 @@ interface IDollarDao {
     @Query("SELECT * FROM dollars")
     suspend fun getList(): List<DollarEntity>
 
-
     @Insert(onConflict = OnConflictStrategy.IGNORE)
-    suspend fun insert(dollar: DollarEntity)
-
+    suspend fun insert(dollarEntity: DollarEntity)
 
     @Query("DELETE FROM dollars")
     suspend fun deleteAll()
-
 
     @Insert(onConflict = OnConflictStrategy.IGNORE)
     suspend fun insertDollars(lists: List<DollarEntity>)

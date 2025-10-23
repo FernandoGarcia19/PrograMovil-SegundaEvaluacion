@@ -5,19 +5,25 @@ import androidx.room.Entity
 import androidx.room.PrimaryKey
 
 @Entity(tableName = "dollars")
-data class DollarEntity(
+class DollarEntity {
     @PrimaryKey(autoGenerate = true)
     @ColumnInfo(name = "id")
-    var id: Int = 0,
+    var id: Int = 0
 
-    @ColumnInfo(name = "purchasePrice")
-    var purchasePrice: String? = null,
+    @ColumnInfo(name = "dollar_official")
+    var dollarOfficial: String? = null
 
-    @ColumnInfo(name = "salesPrice")
-    var salesPrice: String? = null,
+    @ColumnInfo(name = "dollar_parallel")
+    var dollarParallel: String? = null
 
-    @ColumnInfo(name = "type")
-    var type: String? = null,
+    @ColumnInfo(name = "dollar_usdt")
+    var dollarUsdt: String? = null
+
+    @ColumnInfo(name = "dollar_usdc")
+    var dollarUsdc: String? = null
+
 
     @ColumnInfo(name = "timestamp")
-    var timestamp: Long = 0)
+    var timestamp: Long = 0
+
+}
